@@ -19,8 +19,12 @@ work(["signup"], Arg) ->
 			UserData = yaws_api:parse_post(Arg),
 			Nick = erlang:element(2, lists:keyfind("nick", 1, UserData)),
 			Password = tenc_util:md5( erlang:element(2, lists:keyfind("password", 1, UserData) )),
-			case (tenc_auth:register(Nick, Password)) of
-				false -> {redirect_local, "/user/signin"};
+			Confirm = tenc_util:md5( erlang:element(2, lists:keyfind("confirm", 1, UserData) )),
+			case (Password == Confirm andalso tenc_auth:register(Nick, Password)) of
+				false -> tenc_main:show(
+					"<span class=\"error\">" ++ tenc_lang:t("Password mismatch") ++ "</span>" ++
+					hehe:run("tenc/html/signup.hehe")
+				);
 				Cookie -> 
 					[
 						{redirect, "/"}, 
