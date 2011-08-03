@@ -1,0 +1,485 @@
+body {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #000000;
+    font-family: "Arial Unicode MS",Arial,Helvetica,sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+}
+#header {
+    background: none repeat scroll 0 0 #C0C0C0;
+    color: #333333;
+    padding: 1em;
+}
+#logo a {
+    color: #000000;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-decoration: none;
+}
+#logo .sub {
+    color: #777777;
+    font-size: 0.5em;
+}
+#body {
+    padding: 1em;
+}
+#notice {
+    -moz-border-radius: 1em 1em 1em 1em;
+    border: 4px solid #0A4C75;
+    display: block;
+    padding: 1em;
+    text-align: center;
+}
+#footer {
+    clear: both;
+    font-size: 0.8em;
+    padding-top: 1em;
+}
+#search {
+    float: right;
+    margin: 0;
+    padding: 0.5em;
+}
+#addTalk {
+}
+input, textarea, select {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #C0C0C0;
+    color: #000000;
+    padding: 0.25em;
+}
+input, textarea, select {
+    -moz-border-radius: 0.44em 0.44em 0.44em 0.44em;
+}
+label {
+    color: #444444;
+    font-weight: bold;
+}
+.btn {
+    background: none repeat scroll 0 0 #DBDBDB;
+    border: 1px ridge #666666;
+    color: #222222;
+    display: inline;
+    font-weight: bold;
+}
+.errorMsg {
+    color: #C10000;
+}
+.errorInput {
+    border-color: #C10000;
+}
+a {
+    color: #0A4C75;
+    text-decoration: none;
+}
+a:hover {
+    border-bottom: 1px solid #0A4C75;
+}
+a:visited {
+    color: #0A4C75;
+}
+form {
+    margin: 0;
+    padding: 0;
+}
+#inputSummary {
+    width: 20em;
+}
+table {
+    width: 100%;
+}
+.note .info a {
+    text-decoration: none;
+}
+.shade {
+    opacity: 0.7;
+}
+dt {
+    font-weight: bold;
+}
+dt, dd {
+}
+.noteText img {
+    max-height: 640px;
+    max-width: 760px;
+}
+img {
+    border: medium none;
+}
+code {
+    font-family: monospace;
+}
+.subtle {
+    color: #C0C0C0;
+}
+.var {
+    color: darkblue;
+}
+.val {
+    font-weight: bold;
+}
+hr {
+    color: #009933;
+    height: 1px;
+}
+.highlight {
+    background-color: yellow;
+}
+.statBar {
+    background: none repeat scroll 0 0 #0A4C75;
+    border: 0 solid;
+    display: block;
+    float: left;
+    text-align: center;
+    width: 2px;
+}
+.tagCloud {
+    margin: 1em;
+}
+.tagCloud .tag {
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 2em;
+    margin: 0;
+    padding: 0;
+}
+.tagCloud .tag a {
+    -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background: none repeat scroll 0 0 #EEEEEE;
+    color: #444444;
+    padding: 0.35em;
+    text-decoration: none;
+}
+.tagCloud .tag a:hover {
+    background: none repeat scroll 0 0 #EFEFEF;
+    color: #222222;
+}
+.tagCloudMini {
+    margin: 0;
+}
+.tagCloudMini .tag {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0.5em;
+}
+.tagCloudMini .tag a {
+    color: #444444;
+    text-decoration: none;
+}
+.tagCloudMini .tag a:hover {
+    color: #222222;
+}
+#header #entity {
+    float: right;
+}
+#talkModule {
+    margin: 0 0 0 1em;
+}
+#talkModule #talk {
+    background: none repeat scroll 0 0 #DDDDDD;
+    color: #000000;
+    padding: 1em;
+}
+#talkModule #talk label {
+}
+#talkModule #note {
+    background: none repeat scroll 0 0 #EAEAEA;
+    padding: 1em;
+}
+#talkModule .btn {
+    display: inline;
+}
+.notes {
+    padding: 1em;
+}
+.note .id {
+    font-size: 1.4em;
+    font-weight: normal;
+}
+.note .id a {
+    color: #7F7F7F;
+}
+.note hr {
+    border: 1px solid #DBDBDB;
+    height: 0;
+}
+.note .time {
+    float: right;
+    padding: 0 0 0 0.5em;
+}
+.note .category {
+    float: left;
+    font-family: monospace;
+    font-weight: bold;
+    padding: 0 0.5em 0 0;
+}
+.note .text {
+    display: block;
+    margin: 0;
+    word-wrap: break-word;
+}
+.note .topic {
+    display: inline;
+    float: right;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 1em 1em 0 0;
+    padding: 0;
+}
+.note .topic a {
+    color: #40587C;
+}
+.note .summary {
+    color: #333333;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 2em;
+    padding: 0;
+}
+.note .text {
+    margin: 0 0 0 0;
+    padding: 0;
+}
+.note .text p {
+    margin: 0.75em 0;
+}
+.note .tags {
+    margin: 0;
+    padding: 0.25em;
+    text-align: right;
+}
+.note .tags .tag a {
+    border: medium none;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 0.75em;
+    text-decoration: none;
+}
+.note .tags .tag a:hover {
+    border-bottom: 1px solid #1C8ECC;
+}
+#talkTitle a {
+    border: medium none;
+    color: #385C93;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+#inputTopic {
+    width: 40%;
+}
+#inputSummary {
+    width: 35%;
+}
+#inputTags {
+    width: 12%;
+}
+#inputText {
+    height: 14em;
+    width: 99%;
+}
+.talks, #help {
+    clear: none;
+    float: right;
+    width: 30%;
+}
+#help {
+    clear: right;
+}
+.talks .talk {
+    display: block;
+}
+.talks .talk a {
+    text-decoration: none;
+}
+#talkModule .errorMsg {
+    padding: 1em;
+}
+#talkModule #talk {
+    -moz-border-radius: 1em 1em 0 0;
+}
+#header .tag {
+    font-weight: bold;
+}
+.notes, #talkModule {
+    width: 60%;
+}
+.note, #talkModule {
+    max-width: 70em;
+}
+#sideModules {
+    clear: right;
+    float: right;
+    width: 30%;
+}
+.note {
+    -moz-border-radius: 1em 1em 1em 1em;
+    background: none repeat scroll 0 0 white;
+    margin-top: 1em;
+    padding: 1em;
+}
+.note hr {
+}
+.note .category {
+    float: none;
+}
+.note .footer {
+    border-top: 0 solid #DBDBDB;
+}
+.note .text {
+}
+#talkModule {
+}
+.notes {
+    margin-top: 0;
+    padding: 1em;
+}
+#sideModules {
+    -moz-border-radius: 1em 1em 1em 1em;
+    background: none repeat scroll 0 0 white;
+    padding: 1em;
+}
+#body {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+h1 {
+    color: #4A5060;
+}
+h2 {
+    color: #555A5E;
+}
+blockquote {
+    background-color: #E0E0E0;
+    display: block;
+    margin: 0 0 0 1em;
+    padding: 1em;
+}
+blockquote {
+    -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+.note {
+    margin-bottom: 1em;
+}
+.note:target hr {
+    border: 1px solid #34217F;
+}
+ul.notes {
+    border-left: 1px dashed #FFFFFF;
+    display: block;
+    margin: 0;
+    padding: 1em 0 0 2em;
+    width: auto;
+}
+li.note {
+    list-style: none outside none;
+    margin: 0;
+}
+li.note .replyID {
+    opacity: 0;
+}
+li.note .replyID:hover {
+    opacity: 1;
+}
+#talkModule {
+    margin-top: 1em;
+}
+.alt0 > .note {
+    background-color: white;
+}
+.alt1 > .note {
+    background-color: #EAEAEA;
+}
+a.time {
+    color: #757575;
+    font-size: 0.8em;
+}
+.unread1 {
+    color: red;
+}
+#help, .talks {
+    float: none;
+    width: 100%;
+}
+.censored {
+    background: none repeat scroll 0 0 #000000;
+    color: red;
+}
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.note, .note:hover {
+    border: 1px solid #DBDBDB;
+}
+.note:hover {
+    border: 1px solid #BBBBBB;
+    opacity: 1;
+}
+.btnTag {
+    background-color: #FEE9CD;
+    font-size: x-small;
+    margin: 0.2em;
+}
+.plus {
+    color: green;
+}
+.minus {
+    color: red;
+}
+.rank1 {
+    border-color: #CCCCCC;
+}
+.rank2 {
+    border-color: #B3B3B3;
+}
+.rank3 {
+    border-color: #999999;
+}
+.rank4 {
+    border-color: #808080;
+}
+.rank5 {
+    border-color: #666666;
+}
+.rank6 {
+    border-color: #4D4D4D;
+}
+.rank7 {
+    border-color: #333333;
+}
+.rank8 {
+    border-color: #1A1A1A;
+}
+.rank9 {
+    border-color: #000000;
+}
+.rank-1 {
+    opacity: 0.9;
+}
+.rank-2 {
+    opacity: 0.8;
+}
+.rank-3 {
+    opacity: 0.7;
+}
+.rank-4 {
+    opacity: 0.6;
+}
+.rank-5 {
+    opacity: 0.5;
+}
+.rank-6 {
+    opacity: 0.4;
+}
+.rank-7 {
+    opacity: 0.3;
+}
+.rank-8 {
+    opacity: 0.2;
+}
+.rank-9 {
+    opacity: 0.1;
+}
+.meta form {
+    display: inline;
+}
