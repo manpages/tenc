@@ -11,7 +11,7 @@
 		<script type="text/javascript" src="/js/functions.js"></script>
 		<script type="text/javascript" src="/js/json.js"></script>
 
-		<title>MyEgy (WiP)</title>
+		<title>talk.encrypted</title>
 	</head>
 
 	<body>
@@ -37,6 +37,8 @@
 			?>
 			</div>
 		</div>
-		<?= tenc_util:keyfind(content, Arg) ?>
+		<div id="content">
+			<?= tenc_util:keyfind(content, Arg) ?>
+		</div>
 	</body>
 </html>

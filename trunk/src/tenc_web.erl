@@ -35,7 +35,7 @@ process(Arg) ->
 	
 	% Prepare user data
 	
-	UID = case yaws_api:find_cookie_val("auth", Cookies) of
+	UID = case yaws_api:find_cookie_val("tenc_auth", Cookies) of
 		[] -> 0;
 		AC ->
 			case tenc_auth:cookie(AC) of

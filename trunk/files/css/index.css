@@ -6,6 +6,9 @@ body {
     overflow-x: hidden;
     padding: 0;
 }
+#content {
+	padding: 2em;
+}
 #header {
     background: none repeat scroll 0 0 #C0C0C0;
     color: #333333;
@@ -26,6 +29,7 @@ body {
 }
 #notice {
     -moz-border-radius: 1em 1em 1em 1em;
+	-webkit-border-radius:10px;
     border: 4px solid #0A4C75;
     display: block;
     padding: 1em;
@@ -51,6 +55,7 @@ input, textarea, select {
 }
 input, textarea, select {
     -moz-border-radius: 0.44em 0.44em 0.44em 0.44em;
+	-webkit-border-radius:1em 1em 1em 1em;
 }
 label {
     color: #444444;
@@ -146,6 +151,7 @@ hr {
 }
 .tagCloud .tag a {
     -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+	-webkit-border-radius:1em 1em 1em 1em;
     background: none repeat scroll 0 0 #EEEEEE;
     color: #444444;
     padding: 0.35em;
@@ -208,7 +214,7 @@ hr {
     float: right;
     padding: 0 0 0 0.5em;
 }
-.note .category {
+.note .file {
     float: left;
     font-family: monospace;
     font-weight: bold;
@@ -297,6 +303,7 @@ hr {
 }
 #talkModule #talk {
     -moz-border-radius: 1em 1em 0 0;
+	-webkit-border-radius:1em 1em 1em 1em;
 }
 #header .tag {
     font-weight: bold;
@@ -314,13 +321,14 @@ hr {
 }
 .note {
     -moz-border-radius: 1em 1em 1em 1em;
+	-webkit-border-radius:1em 1em 1em 1em;
     background: none repeat scroll 0 0 white;
     margin-top: 1em;
     padding: 1em;
 }
 .note hr {
 }
-.note .category {
+.note .file {
     float: none;
 }
 .note .footer {
@@ -336,6 +344,7 @@ hr {
 }
 #sideModules {
     -moz-border-radius: 1em 1em 1em 1em;
+	-webkit-border-radius:1em 1em 1em 1em;
     background: none repeat scroll 0 0 white;
     padding: 1em;
 }
@@ -356,6 +365,7 @@ blockquote {
 }
 blockquote {
     -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+	-webkit-border-radius:1em 1em 1em 1em;
 }
 .note {
     margin-bottom: 1em;
