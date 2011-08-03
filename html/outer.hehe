@@ -1,0 +1,42 @@
+<??
+-include_lib("tenc/include/tenc.hrl").
+??><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+	<head>
+		<link href="/files/css/index.css" rel="stylesheet">
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/js/functions.js"></script>
+		<script type="text/javascript" src="/js/json.js"></script>
+
+		<title>MyEgy (WiP)</title>
+	</head>
+
+	<body>
+		<div id="header">
+			<span id="logo">
+				<a href="/">
+					<span class="sub">talk.</span>encrypted
+				</a>
+			</span>
+			<div id="entity">
+			<?
+				case (get(uid)) of
+					0 -> 
+						a?>
+							<a href="/user/signin"><?= tenc_lang:t("signin") ?></a> | <a href="/user/signup"><?= tenc_lang:t("signup")?></a>
+						<?z;
+					UID ->
+						User = tenc_user:get_cv(UID, profile),
+						a?>
+							<?= tenc_lang:t("logged in as") ?> <a href="/user/me"><?= User#profile.nick ?></a>  | <a href="/user/logout"><?= tenc_lang:t("logout")?></a> | <a href="/admin/forums"><?= tenc_lang:t("admin") ?> <?= tenc_lang:t("(WIP)") ?></a>
+						<?z
+				end
+			?>
+			</div>
+		</div>
+		<?= tenc_util:keyfind(content, Arg) ?>
+	</body>
+</html>
