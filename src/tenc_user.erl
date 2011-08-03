@@ -24,7 +24,7 @@ work(["signup"], Arg) ->
 				Cookie -> 
 					[
 						{redirect, "/"}, 
-						yaws_api:setcookie("auth", Cookie, "/")
+						yaws_api:setcookie("tenc_auth", Cookie, "/")
 					]
 			end;
 		_ -> tenc_main:show("http method isn't supported")
@@ -47,7 +47,7 @@ work(["signin"], Arg) ->
 					"wrong password" ++
 					hehe:run("tenc/html/signin.hehe")
 				);
-				Cookie -> [ {redirect, "/"}, yaws_api:setcookie("auth", Cookie, "/") ]
+				Cookie -> [ {redirect, "/"}, yaws_api:setcookie("tenc_auth", Cookie, "/") ]
 			end;
 
 		_ -> tenc_main:show("http method isn't supported")
@@ -61,7 +61,7 @@ work(["me"], Arg) ->
 work(["logout"], _Arg) ->
 	[
 		{redirect, "/"}, 
-		yaws_api:setcookie("auth", "loggedOut", "/")
+		yaws_api:setcookie("tenc_auth", "loggedOut", "/")
 	];
 work(_, _) -> ok.
 
@@ -135,7 +135,7 @@ user_editor(UID, Arg) ->
 					{redirect_local, "/user/me"};
 				Cookie -> [
 					{redirect_local, "/user/me"},
-					yaws_api:setcookie("auth", Cookie, "/")
+					yaws_api:setcookie("tenc_auth", Cookie, "/")
 				]
 			end
 	end.

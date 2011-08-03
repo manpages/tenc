@@ -1,0 +1,12 @@
+<??
+-include_lib ("tenc/include/tenc.hrl").
+??>
+<h1><?= tenc_lang:t("welcome back") ?></h1>
+<form method="post">
+	<?= tenc_lang:t("nickname") ?> <br />
+	<input type="text" name="nick" /><br />
+	<?= tenc_lang:t("password") ?> <br />
+	<input type="password" name="password" /><br />
+
+	<input type="submit" name="ok" value="<?=tenc_lang:t("login") ?>" />
+</form>
