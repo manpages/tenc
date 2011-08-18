@@ -5,6 +5,8 @@
 <form method="post">
 	<?= tenc_lang:t("nickname") ?> <br />
 	<input type="text" name="nick" /><br />
+	<?= tenc_lang:t("public pgp key") ?><br />
+	<input type="file" name="public_key" /><br />
 	<?= tenc_lang:t("password") ?> <br />
 	<input type="password" name="password" /><br />
 	<?= tenc_lang:t("confirm password") ?> <br />
