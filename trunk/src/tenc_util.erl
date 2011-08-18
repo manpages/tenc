@@ -22,7 +22,8 @@
 
 	bbcode_to_html/1,
 	get_page_from_params/1,
-	links_for_pages/2
+	links_for_pages/2,
+	html_pid/0
 ]).
 
 md5(Value) ->
@@ -142,6 +143,8 @@ get_page_from_params(Rest) ->
 			end;
 		_ -> 1
 	end.
+
+html_pid() -> string:sub_string(pid_to_list(self()), 2, string:len(pid_to_list(self())) - 1).
 %might be a faster solution than the one implemented in regexp lib
 %but i'm not sure, that's why i use library functions.
 

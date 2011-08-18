@@ -47,6 +47,7 @@ body {
 }
 #addTalk {
 }
+input {width: 180px;}
 input, textarea, select {
     background: none repeat scroll 0 0 #F9F9F9;
     border: 1px solid #C0C0C0;
@@ -55,7 +56,7 @@ input, textarea, select {
 }
 input, textarea, select {
     -moz-border-radius: 0.44em 0.44em 0.44em 0.44em;
-	-webkit-border-radius:1em 1em 1em 1em;
+	-webkit-border-radius: 0.44em 0.44em 0.44em 0.44em;
 }
 label {
     color: #444444;

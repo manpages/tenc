@@ -9,6 +9,7 @@
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="/js/functions.js"></script>
+		<script type="text/javascript" src="/js/jquery.form.js"></script>
 		<script type="text/javascript" src="/js/json.js"></script>
 
 		<title>talk.encrypted</title>
@@ -31,7 +32,7 @@
 					UID ->
 						User = tenc_user:get_cv(UID, profile),
 						a?>
-							<?= tenc_lang:t("logged in as") ?> <a href="/user/me"><?= User#profile.nick ?></a>  | <a href="/user/logout"><?= tenc_lang:t("logout")?></a> | <a href="/admin/forums"><?= tenc_lang:t("admin") ?> <?= tenc_lang:t("(WIP)") ?></a>
+							<?= tenc_lang:t("logged in as") ?> <a href="/user/me"><?= User#profile.nick ?></a>  | <a href="/user/logout"><?= tenc_lang:t("logout")?></a>
 						<?z
 				end
 			?>
