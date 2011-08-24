@@ -84,6 +84,6 @@ function Poll (argURL, argHandler) {
 		if(!varTuple[0]) {
 			argHandler (varTuple[1]);
 			Poll (argURL, argHandler);
-		}
+		} 	
 	})
 }

@@ -10,9 +10,10 @@ work ([PollID], _) ->
 		0 -> false;
 		UID -> 
 			Descriptor = {poll, PollID, user, UID},
-			io:format ("~nLONG_POLL: poll_id `~p`~n", [PollID]),
+			fission_syn:del(Descriptor),
 			PID = spawn(?MODULE, loop, [self(), Descriptor]),
 			fission_syn:set(Descriptor, PID),
+			io:format ("LONG_POLL: poll_id and forked PID: ~p ~p~n", [PollID, PID]),
 			{streamcontent, "text/html", "[ "}
 	end
 .
@@ -20,20 +21,26 @@ work ([PollID], _) ->
 loop (WorkPID, Descriptor) ->
 	receive
 	stop ->
+		fission_syn:del(Descriptor),
 		io:format ("LONG_POLL: sigkill recvd~n"),
 		yaws_api:stream_chunk_deliver(WorkPID, "true, true ]"),
-		yaws_api:stream_chunk_end(WorkPID),
-		fission_asyn:del_n(Descriptor);
+		yaws_api:stream_chunk_end(WorkPID);
 	{data, Data} ->
+		fission_syn:del(Descriptor),
 		io:format ("LONG_POLL: data recvd~n"),
 		yaws_api:stream_chunk_deliver(WorkPID, "false, " ++ Data ++ " ]"),
-		yaws_api:stream_chunk_end(WorkPID),
-		fission_asyn:del_n(Descriptor)
-	after 45000 ->
-		io:format("LONG_POLL: testing connection~n"),
+		yaws_api:stream_chunk_end(WorkPID);
+	X -> %debug only
+		io:format ("LONG_POLL (debug only): something received ~p~n", [X]),
+		loop(WorkPID, Descriptor)
+	after 10000 ->
+		io:format ("LONG_POLL~p: testing connection~n", [self()]),
 		case yaws_api:stream_chunk_deliver_blocking(WorkPID, "\n") of
-			ok -> loop (WorkPID, Descriptor);
-			{error, _} -> io:format("Aptaujas ~p nave~n", [Descriptor]), fission_asyn:del_n(Descriptor)
+			ok -> 
+				loop (WorkPID, Descriptor);
+			{error, _} -> 
+				fission_syn:del(Descriptor),
+				io:format("LONG_POLL: aptaujas ~p nave~n", [Descriptor])
 		end
 	end
 .
