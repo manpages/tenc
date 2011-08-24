@@ -1,0 +1,20 @@
+<??
+-include_lib("tenc/include/tenc.hrl").
+
+f(5) -> "5";
+f(Int) when is_integer(Int) ->
+	integer_to_list(Int) ++ " " ++ f(Int + 1)
+.
+??>
+<?
+	X = list_to_integer(Arg),
+	io:format("~nX := ~p~n", [X])
+?>
+
+<h1>SCHACHLO POPYACHSJA</h1>
+<? 
+	case (X > 5) of
+		true -> h?>u<?j;
+		_ -> a?><?= f(X) ?><?z
+	end
+?>

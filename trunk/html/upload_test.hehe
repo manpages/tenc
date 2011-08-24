@@ -1,6 +1,7 @@
 <??
 -include_lib ("tenc/include/tenc.hrl").
 ??>
+ROFL MAO
 <form action="/upload" method="POST" enctype="multipart/form-data" id="FileUploader">
 	<input type="file" name="test<?=tenc_util:html_pid()?>" id="FileTrigger" /> <div id="UploadProgress"></div><br />
 </form>

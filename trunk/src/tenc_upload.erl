@@ -121,18 +121,11 @@ basename(FilePath) ->
 	end.
 
 new_chunk(X) -> 
-	%io:format ("UPLOADER: new_chunk ~p|~p~n", [{length, X}, {descr, {poll, get(poll_id), user, get(uid)}}]),
-	case fission_syn:get({poll, get(poll_id), user, get(uid)}) of
-		{value, PID} -> PID ! {data, float_to_list(X)};
-		_ -> false
-	end
+	io:format ("UPLOADER: new_chunk ~p~n", [get(poll_id)]),
+	poll_manager ! {{poll, get(poll_id), user, get(uid)}, {data, float_to_list(X)}}
 .
 
 last_chunk() -> 
-	%io:format ("UPLOADER: last_chunk ~p~n", [{descr, {poll, get(poll_id), user, get(uid)}}]),
-	case fission_syn:get({poll, get(poll_id), user, get(uid)}) of
-		{value, PID} -> 
-			PID ! stop;
-		_ -> false
-	end
+	io:format ("UPLOADER: last_chunk ~p~n", [get(poll_id)]),
+	poll_manager ! {{poll, get(poll_id), user, get(uid)}, stop}
 .
